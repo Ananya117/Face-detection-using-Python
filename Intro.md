@@ -10,3 +10,5 @@ Utilising OpenCV and a pre trained face detection model, creating a system that 
 Model:
 https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_alt.xml
 
+Procedure:
+Upload both test picture and xml file before running the code
