@@ -1,0 +1,23 @@
+#import library
+import cv2
+
+#Load the cascade
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+#read the input image
+img = cv2.imread('test.jpg')
+
+# Check if the image was loaded successfully
+if img is None:
+    print("Error: Could not read the image. Check the file path and ensure the image is not corrupt.")
+else:
+    #detect faces
+    faces = face_cascade.detectMultiScale(img, 1.1, 4)
+
+    #Draw rectangle around the faces
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+    #Export the result
+    cv2.imwrite("face_detected.png", img)
+    print('Photo successfully exported!')
